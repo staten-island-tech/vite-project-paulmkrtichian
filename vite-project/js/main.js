@@ -1,8 +1,8 @@
-import "../css/style.css";
-import { Menu, Name } from "./menu";
+ import "../css/style.css";
+/* import { Menu, Name } from "./menu";
 console.log (Menu, Name);
-
-const MMAfighters = [
+*/
+/* const MMAfighters = [
     {
         fName: "John",
         lName: "Jones",
@@ -51,3 +51,8 @@ MMAfighters.forEach((MMAfighters) => {
 
 const Russian = MMAfighters.filter((MMAfighters) => MMAfighters.fromRussia === 'Yes');
 console.log(Russian);
+*/
+
+document.querySelector(".btn").addEventListener("click", function() {
+document.body.classList.add("warm");
+});
