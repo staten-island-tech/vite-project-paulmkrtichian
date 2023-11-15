@@ -1,4 +1,6 @@
  import "../css/style.css";
+ const button = document.querySelector(".btn")
+ let mode = "blue";
 /* import { Menu, Name } from "./menu";
 console.log (Menu, Name);
 */
@@ -53,6 +55,9 @@ const Russian = MMAfighters.filter((MMAfighters) => MMAfighters.fromRussia === '
 console.log(Russian);
 */
 
-document.querySelector(".btn").addEventListener("click", function() {
+button.addEventListener("click", function() {
 document.body.classList.add("warm");
+if (mode === "blue"){
+    mode = "warm";
+}
 });
