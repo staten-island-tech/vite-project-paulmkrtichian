@@ -1,6 +1,6 @@
  import "../css/style.css";
  const button = document.querySelector(".btn")
- let mode = "blue";
+ let mode = "cold";
 /* import { Menu, Name } from "./menu";
 console.log (Menu, Name);
 */
@@ -57,7 +57,10 @@ console.log(Russian);
 
 button.addEventListener("click", function() {
 document.body.classList.add("warm");
-if (mode === "blue"){
-    mode = "warm";
+if (mode === "cold"){
+    mode === "warm";
+}
+else {
+    mode === "cold"
 }
 });

@@ -1,16 +1,22 @@
 :root {
 
   --light-red: #f87171;
+  --light-blue: #0b22f8;
 
-  --primary: var(--light-red);
+  color-scheme: warm cold;
+  color: rgba(red, green, blue, alpha);
+  background-color: #f87171;
 }
 
 
 .warm{
   --primary: var(--light-red)
 }
+.cold{
+  --primary: var(--light-blue)
+}
 body {
-  background-color: yellow;
+  background-color: #0b22f8;
   margin: 0;
   display: flex;
   place-items: center;
@@ -18,8 +24,9 @@ body {
   min-height: 100vh;
 }
 body.warm {
-  background-color: red;
+  background-color: #f87171;;
 }
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -64,11 +71,5 @@ h1 {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-.btn.hover{
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+
 
