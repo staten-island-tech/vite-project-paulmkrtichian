@@ -1,22 +1,29 @@
 :root {
 
   --light-red: #f87171;
-  --light-blue: #0b22f8;
-
-  color-scheme: warm cold;
-  color: rgba(red, green, blue, alpha);
-  background-color: #f87171;
+  --dark-blue: #0b22f8;
+  --light-blue: #bac0f5;
+  --dark-red: #f30707;
 }
 
 
 .warm{
-  --primary: var(--light-red)
+  --primary: var(--light-red);
+  --secondary: var(--dark-red);
 }
 .cold{
-  --primary: var(--light-blue)
+  --primary: var(--light-blue);
+  --secondary: var(--dark-blue);
 }
-body {
-  background-color: #0b22f8;
+.hero {
+  background-color:var(--secondary);
+}
+.main {
+  background-color:var(--primary);
+  height: 90vh;
+}
+/* body {
+  background-color: #bac0f5;
   margin: 0;
   display: flex;
   place-items: center;
@@ -25,7 +32,7 @@ body {
 }
 body.warm {
   background-color: #f87171;;
-}
+} */
 
 h1 {
   font-size: 3.2em;
@@ -67,7 +74,7 @@ h1 {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: white;
   cursor: pointer;
   transition: border-color 0.25s;
 }

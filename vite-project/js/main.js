@@ -55,12 +55,27 @@ const Russian = MMAfighters.filter((MMAfighters) => MMAfighters.fromRussia === '
 console.log(Russian);
 */
 
-button.addEventListener("click", function() {
-document.body.classList.add("warm");
-if (mode === "cold"){
-    mode === "warm";
+// button.addEventListener("click", () => {
+// document.body.classList.add("warm");
+// if (mode === "cold"){
+//     mode = "warm";
+//     button.textContent = "Change to Cold"
+// }else{
+//     mode = "cold"
+//     button.textContent = "Change to Warm"
+// } 
+// });
+
+document.querySelector(".btn").addEventListener("click", function () {
+if (document.body.classList.contains("cold")){
+    document.body.classList.add("warm");
+    document.body.classList.remove("cold");
+    button.textContent = "Change to Cold"
+} else {
+    document.body.classList.add("cold");
+    document.body.classList.remove("warm")
+    button.textContent = "Change to Warm"
 }
-else {
-    mode === "cold"
-}
+
+
 });
