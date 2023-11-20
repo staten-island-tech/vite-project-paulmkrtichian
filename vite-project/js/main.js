@@ -1,6 +1,6 @@
  import "../css/style.css";
  const button = document.querySelector(".btn")
- let mode = "cold";
+
 /* import { Menu, Name } from "./menu";
 console.log (Menu, Name);
 */
@@ -183,6 +183,17 @@ const toys = [
     hasBatteries: "Yes",
   }
 ]
+ function createcard(toy){
+  const toycard = document.createElement('div')
+  toycard.classList.add('toy-card');
+  toycard.textContent = `${toy.name} ${toy.type} ${toy.price} ${toy.hasBatteries}`;
+  toys.appendChild(toycard);
+}
+function display(toys){
+toycards.textContent = ``;
+toys.forEach(createcard)
+}
+display(toys);
 
 document.querySelector(".btn").addEventListener("click", function () {
 if (document.body.classList.contains("cold")){
