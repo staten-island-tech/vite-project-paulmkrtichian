@@ -8,6 +8,7 @@
     type: "Building Blocks",
     price: 25.99,
     hasBatteries: "No",
+   /* "img": "https://th.bing.com/th/id/OIP.LwsB9DSXijUSDoQkYiKqpgHaJQ?rs=1&pid=ImgDetMain"*/
   },
   {
     name: "Barbie Dreamhouse",
@@ -99,7 +100,7 @@ function renderProducts(productList) {
   productList.forEach((toy) => {
     const card = document.createElement('div');
     card.classList.add('card');
-    card.innerHTML = `${toy.name}, ${toy.price}`;
+    card.innerHTML = `${toy.name}, ${toy.price} ${toy.img}`;
     app.appendChild(card);
   });
 }
