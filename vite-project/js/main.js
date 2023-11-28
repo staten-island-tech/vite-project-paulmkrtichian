@@ -1,7 +1,6 @@
  import "../css/style.css";
- import toys from "./menu";
  const button = document.querySelector(".btn")
- const toydata = document.querySelector("")
+ 
 
  const toys = [
   {
@@ -84,7 +83,13 @@
   }
 ]
 function createtoycard(toy){
-  const toydata = ``
+  const toydata = `
+<p>${toy.name}</p>
+<p>${toy.type}</p>
+<p>${toy.price}</p>
+<p>${toy.hasBatteries}</p>`
+  
+  productList.insertAjacentHTML('beforeend', toydata)
 }
 
  const app = document.getElementById('app');
