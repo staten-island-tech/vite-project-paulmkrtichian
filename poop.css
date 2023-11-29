@@ -8,3 +8,34 @@
 <button class="btn4">Expensive</button>
 <div id="app"></div>
 </div>
+
+/* DOMSelectors.cheapbutton.addEventListener("click", pricefilterone);
+
+function pricefilterone() {
+  const cardone = toys.filter(toy => toy.price < 50);
+  DOMSelectors.cardbox = '';
+
+  cardone.forEach((toy) => {
+    const htmlcard =`
+<div class="cardcontainer">
+<h2>${toy.name}</h2>
+<p>${toy.price}</p>
+<img class="collection" src="${toy.img}" alt="">
+<p> BATTERIES?: ${toy.hasBatteries}</p>
+<p> TYPE: ${toy.type}</p>
+</div>`
+DOMSelectors.cardbox.insertAdjacentHTML('beforeend', htmlcard);
+  })
+}
+*/
+/* function createtoycard(toy){
+  const toydata = `
+<p>${toy.name}</p>
+<p>${toy.type}</p>
+<p>${toy.price}</p>
+<p>${toy.hasBatteries}</p>`
+  
+  productList.insertAjacentHTML('beforeend', toydata)
+}
+*/
+
