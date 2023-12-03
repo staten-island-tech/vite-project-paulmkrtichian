@@ -7,7 +7,7 @@
      cardbox: document.getElementById("cardcontainer"),
    };
   
-   function renderProducts(productList) {
+   function filtertoys(productList) {
      DOMSelectors.cardbox.innerHTML = "";
      productList.forEach((toy) => {
        const stuff = `
@@ -23,37 +23,36 @@
      });
    }
 
-   toys.forEach((toy) => {
-     const stuff = `
-    <div class="cardcontainer">
-      <h2>${toy.name}</h2>
-      <h3>$${toy.price}</p>
-      <img class="collection" src="${toy.img}" alt="">
-      <p>BATTERIES?: ${toy.hasBatteries}</p>
-      <p>TYPE: ${toy.type}</p>
-      <p> ----------------------------------------------------------------------------------------------</p>
-    </div>`;
-     DOMSelectors.cardbox.insertAdjacentHTML("beforeend", stuff);
-   });
-
+   const toyCards = toys.map((toy) => `
+   <div class="cardcontainer">
+     <h2>${toy.name}</h2>
+     <h3>$${toy.price}</h3>
+     <img class="collection" src="${toy.img}" alt="">
+     <p>BATTERIES?: ${toy.hasBatteries}</p>
+     <p>TYPE: ${toy.type}</p>
+     <p> ----------------------------------------------------------------------------------------------</p>
+   </div>
+ `);
+ 
+ toyCards.forEach((card) => {
+   DOMSelectors.cardbox.insertAdjacentHTML("beforeend", card);
+ });
    document.querySelector(".btn2").addEventListener("click", function () {
      const cheapToys = toys.filter((toy) => toy.price < 50);
-     renderProducts(cheapToys);
+     filtertoys(cheapToys);
    });
 
    document.querySelector(".btn3").addEventListener("click", function () {
      const cheapToys = toys.filter(
-       (toy) => toy.price >= 50 && toy.price <= 100
-     );
-     renderProducts(cheapToys);
+       (toy) => toy.price >= 50 && toy.price <= 100);
+     filtertoys(cheapToys);
    });
 
    document.querySelector(".btn4").addEventListener("click", function () {
      const cheapToys = toys.filter((toy) => toy.price > 100);
-     renderProducts(cheapToys);
+     filtertoys(cheapToys);
    });
 
-   const app = document.getElementById("app");
 
    document.querySelector(".btn").addEventListener("click", function () {
      if (document.body.classList.contains("cold")) {
