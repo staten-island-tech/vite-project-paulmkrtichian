@@ -22,7 +22,36 @@
        DOMSelectors.cardbox.insertAdjacentHTML("beforeend", stuff);
      });
    }
-
+function filterbatterytoys(productList) {
+  DOMSelectors.cardbox.innerHTML = "";
+  productList.forEach((toy) => {
+    const stuff = `
+   <div class="cardcontainer">
+     <h2>${toy.name}</h2>
+     <h3>$${toy.price}</p>
+     <img class="collection" src="${toy.img}" alt="">
+     <p>BATTERIES?: ${toy.hasBatteries}</p>
+     <p>TYPE: ${toy.type}</p>
+     <p> ---------------------------------------------------------------------------------------------- </p>
+   </div>`;
+    DOMSelectors.cardbox.insertAdjacentHTML("beforeend", stuff);
+  });
+}
+function filternobatterytoys(productList) {
+  DOMSelectors.cardbox.innerHTML = "";
+  productList.forEach((toy) => {
+    const stuff = `
+   <div class="cardcontainer">
+     <h2>${toy.name}</h2>
+     <h3>$${toy.price}</p>
+     <img class="collection" src="${toy.img}" alt="">
+     <p>BATTERIES?: ${toy.hasBatteries}</p>
+     <p>TYPE: ${toy.type}</p>
+     <p> ---------------------------------------------------------------------------------------------- </p>
+   </div>`;
+    DOMSelectors.cardbox.insertAdjacentHTML("beforeend", stuff);
+  });
+}
    const toyCards = toys.map((toy) => `
    <div class="cardcontainer">
      <h2>${toy.name}</h2>
@@ -52,8 +81,15 @@
      const cheapToys = toys.filter((toy) => toy.price > 100);
      filtertoys(cheapToys);
    });
-
-
+  
+  document.querySelector(".btn5").addEventListener("click", function () {
+  const batteryusage = toys.filter((toy) => toy.hasBatteries === 'Yes');
+  filterbatterytoys(batteryusage);
+});
+document.querySelector(".btn6").addEventListener("click", function () {
+  const batteryusage = toys.filter((toy) => toy.hasBatteries === 'No');
+  filterbatterytoys(batteryusage);
+});
    document.querySelector(".btn").addEventListener("click", function () {
      if (document.body.classList.contains("cold")) {
        document.body.classList.add("warm");
